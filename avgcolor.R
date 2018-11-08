@@ -28,7 +28,7 @@ scalarRGB <- function(){
 
 rgb <- scalarRGB()
 
-#counts the number of times a color shows for each (x, y)
+#counts the number of times each colorval shows for each (x, y)
 grid <- DT[, .N, by = names(DT)]
 
 #throw away values where x or y are above 999 (which were created by a bug in the r/place API)
