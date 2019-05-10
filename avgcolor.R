@@ -13,8 +13,8 @@ colors <- c('#FFFFFF', '#E4E4E4', '#888888', '#222222',
             '#0083C7', '#0000EA', '#E04AFF', '#820080')
 
 #matrix of the colors represented in RGB
-scalarRGB <- function() {
-    hex <- substr(colors,2,7)
+scalarRGB <- function(color) {
+    hex <- substr(color,2,7)
     r <- paste0('0x',substr(hex, 1, 2)) %>% as.numeric
     g <- paste0('0x',substr(hex, 3, 4)) %>% as.numeric
     b <- paste0('0x',substr(hex, 5, 6)) %>% as.numeric
@@ -22,7 +22,7 @@ scalarRGB <- function() {
     return(cbind(r, g, b))
 }
 
-rgb <- scalarRGB()
+rgb <- scalarRGB(colors)
 
 #counts the number of times each colorval shows for each (x, y)
 grid <- DT[, .N, by = names(DT)]
